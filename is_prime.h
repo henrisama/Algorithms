@@ -10,6 +10,5 @@ bool isPrime(int num){
   for (int i = 2; i <= _sqrt; i++){
     if(num%i == 0) div = false;
   }
-  
   return div;
 }
