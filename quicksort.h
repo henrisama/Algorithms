@@ -19,4 +19,5 @@ void quicksort(int values[], int began, int end){
 		quicksort(values, began, j+1);
 	if(i < end)
 		quicksort(values, i, end);
-}//complexity O(nlogn)
+}
+// complexity O(nlogn)
