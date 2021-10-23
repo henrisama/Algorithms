@@ -1,16 +1,19 @@
-void quicksort(int values[], int began, int end){
-	int i, j, pivo, aux;
+#include <algorithm>
+
+template <typename T>
+void quicksort(T* values, int began, int end){
+	int i, j;
+	T pivo;
 	i = began;
 	j = end-1;
 	pivo = values[(began + end) / 2];
+
 	while(i <= j)	{
 		while(values[i] < pivo && i < end) i++;
 		while(values[j] > pivo && j > began) j--;
 	
 		if(i <= j){
-			aux = values[i];
-			values[i] = values[j];
-			values[j] = aux;
+			std::swap(values[i], values[j]);
 			i++;
 			j--;
 		}
@@ -20,4 +23,4 @@ void quicksort(int values[], int began, int end){
 	if(i < end)
 		quicksort(values, i, end);
 }
-// complexity O(nlogn)
+// complexity O(n log(n))
